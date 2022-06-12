@@ -1,7 +1,9 @@
 {
   "scripts": {
     "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
-    "build": "tsc -p ."
+    "build": "rm -rf dist&& tsc -p .",
+    "preprod": "npm run build",
+    "prod": "NODE_ENV=production node dist/index.js"
   },
   "devDependencies": {
     "@types/config": "^0.0.41",
